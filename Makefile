@@ -3,12 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: egomes <egomes@student.42.fr>              +#+  +:+       +#+         #
+#    By: aneuwald <aneuwald@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/10 23:55:33 by acanterg          #+#    #+#              #
-#    Updated: 2022/02/01 19:45:37 by egomes           ###   ########.fr        #
+#    Updated: 2022/02/17 23:46:02 by aneuwald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+MAKEFLAGS += --silent
 
 SRCS	=	ft_memset.c \
 			ft_bzero.c \
@@ -36,8 +38,7 @@ SRCS	=	ft_memset.c \
 			ft_tolower.c \
 			ft_calloc.c \
 			ft_strdup.c \
-
-SRCS_2	=	ft_substr.c \
+			ft_substr.c \
 			ft_strjoin.c \
 			ft_strtrim.c \
 			ft_split.c \
@@ -56,8 +57,7 @@ SRCS_2	=	ft_substr.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
 			ft_lstmap.c 
-
-SRCS_B	=	ft_lstnew.c \
+			ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -65,11 +65,11 @@ SRCS_B	=	ft_lstnew.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c 
+			ft_lstmap.c \
+			gnl.c
 
 OBJS	= ${SRCS:.c=.o}
-OBJS_2	= ${SRCS_2:.c=.o}
-OBJS_B	= ${SRCS_B:.c=.o}
+
 GCC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 NAME	= libft.a
@@ -79,19 +79,12 @@ NAME	= libft.a
 
 all : 		${NAME}
 
-$(NAME) :	${OBJS} ${OBJS_2}
-			@ar rc ${NAME} ${OBJS} ${OBJS_2}
+$(NAME) :	${OBJS}
+			@ar rc ${NAME} ${OBJS}
 			@ranlib ${NAME}
 
-bonus :		${NAME} ${OBJS_B}
-			ar rc ${NAME} ${OBJS_B}
-			ranlib ${NAME}
-
 clean :
-			@rm -f ${OBJS} ${OBJS_2} ${OBJS_B}
-
-teste:		
-			${GCC} ${CFLAGS} -fsanitize=address -g ft_split.c ft_substr.c ft_strlcpy.c ft_strlen.c && ./a.out
+			@rm -f ${OBJS}
 
 fclean :	clean
 			@rm -f ${NAME}
