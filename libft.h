@@ -6,7 +6,7 @@
 /*   By: aneuwald <aneuwald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 21:48:04 by acanterg          #+#    #+#             */
-/*   Updated: 2022/02/17 23:44:02 by aneuwald         ###   ########.fr       */
+/*   Updated: 2022/02/17 23:58:26 by aneuwald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <stdlib.h>
 # include <ctype.h>
 # include <sys/stat.h>
 # include <fcntl.h>
+
+# define BUFF_GNL 10000
 
 typedef struct s_list
 {

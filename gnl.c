@@ -6,9 +6,11 @@
 /*   By: aneuwald <aneuwald@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/10 23:16:02 by egomes            #+#    #+#             */
-/*   Updated: 2022/02/17 23:43:47 by aneuwald         ###   ########.fr       */
+/*   Updated: 2022/02/17 23:57:56 by aneuwald         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 static int	null_buffer(char *buffer)
 {
@@ -17,7 +19,7 @@ static int	null_buffer(char *buffer)
 	if (!buffer)
 		return (-1);
 	i = 0;
-	while (i < 100000)
+	while (i < BUFF_GNL)
 		buffer[i++] = '\0';
 	return (0);
 }
@@ -29,7 +31,7 @@ int	get_next_line(char **line, int fd)
 	char	*buffer;
 	char	c;
 
-	buffer = (char *)malloc(10000);
+	buffer = (char *)malloc(BUFF_GNL);
 	null_buffer(buffer);
 	i = 0;
 	c = '0';

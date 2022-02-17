@@ -6,7 +6,7 @@
 #    By: aneuwald <aneuwald@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/10 23:55:33 by acanterg          #+#    #+#              #
-#    Updated: 2022/02/17 23:46:02 by aneuwald         ###   ########.fr        #
+#    Updated: 2022/02/17 23:51:19 by aneuwald         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -56,7 +56,7 @@ SRCS	=	ft_memset.c \
 			ft_lstdelone.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
-			ft_lstmap.c 
+			ft_lstmap.c \
 			ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
